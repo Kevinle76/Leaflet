@@ -12,7 +12,7 @@ The USGS is interested in building a new set of tools that will allow them to vi
 ![Screenshot _earthquake](https://user-images.githubusercontent.com/100891182/178008739-4ffcd03f-ef64-40da-a67d-1b98d5e7e5fa.png)
 
 
-* Part 2:  Ilustrate the relationship between tectonic plates and seismic activity 
+* Part 2:  Illustrate the relationship between tectonic plates and seismic activity 
 
 ![Screenshot _earthquake_plates](https://user-images.githubusercontent.com/100891182/178008924-2f13ad63-0d0a-4443-bed1-083338662108.png)
 
