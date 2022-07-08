@@ -9,21 +9,21 @@ var earthquakes = new L.LayerGroup();
 // Define Variables for Tile Layers:
 var satellitemap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
     attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
-    maxZoom: 18,
+    maxZoom: 15,
     id: "mapbox.satellite",
     accessToken: API_KEY
 });
 
 var grayscalemap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
     attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
-    maxZoom: 18,
+    maxZoom: 15,
     id: "mapbox.light",
     accessToken: API_KEY
 });
 
 var outdoorsmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
     attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
-    maxZoom: 18,
+    maxZoom: 15,
     id: "mapbox.outdoors",
     accessToken: API_KEY
 });
@@ -104,20 +104,20 @@ d3.json(earthquakesURL, function(earthquakeData) {
     earthquakes.addTo(myMap);
 
       // Create a Legend:
-    var legend = L.control({ position: "bottomright" });
-    legend.onAdd = function() {
-        var div = L.DomUtil.create("div", "info legend"), 
-        magnitlevels = [0, 1, 2, 3, 4, 5];
-
-        div.innerHTML += "<h3>Magnitude Levels</h3>"
-
-        for (var i = 0; i < magnitlevels.length; i++) {
-            div.innerHTML +=
-                '<i style="background: ' + chooseColor(magnitlevels[i] + 1) + '"></i> ' +
-                magnitlevels[i] + (magnitlevels[i + 1] ? '&ndash;' + magnitlevels[i + 1] + '<br>' : '+');
-        }
-        return div;
-    };
-    legend.addTo(myMap);
+      var legend = L.control({ position: "bottomright" });
+      legend.onAdd = function() {
+          var div = L.DomUtil.create("div", "info legend"), 
+          magnitudeLevels = [0, 1, 2, 3, 4, 5];
+  
+          div.innerHTML += "<h3>Magnitude Levels</h3>"
+  
+          for (var i = 0; i < magnitudeLevels.length; i++) {
+              div.innerHTML +=
+                  '<i style="background: ' + chooseColor(magnitudeLevels[i] + 1) + '"></i> ' +
+                  magnitudeLevels[i] + (magnitudeLevels[i + 1] ? '&ndash;' + magnitudeLevels[i + 1] + '<br>' : '+');
+          }
+          return div;
+      };
+           legend.addTo(myMap);
 });
 
