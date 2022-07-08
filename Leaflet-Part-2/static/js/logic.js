@@ -1,10 +1,11 @@
 
 // GeoJSON URL Variables:
 var earthquakesURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
-
+var platesURL = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json"
 
 // Initialize & Create Two Separate LayerGroups:
 var earthquakes = new L.LayerGroup();
+var tectonicPlates = new L.LayerGroup();
 
 // Define Variables for Tile Layers:
 var satellitemap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
@@ -37,8 +38,9 @@ var baseMaps = {
 
 // Create Overlay Objects:
 var overlaymaps = {
-    "Earthquakes": earthquakes
-   };
+    "Earthquakes": earthquakes,
+    "TectonicPlates": tectonicPlates
+};
 
 // Create Map:
 var myMap = L.map("map", {
@@ -88,7 +90,7 @@ d3.json(earthquakesURL, function(earthquakeData) {
             return "#3182bd";
         }
     }
-    // Create a GeoJSON Layer:
+    // Create a GeoJSON Layer
     L.geoJSON(earthquakeData, {
         pointToLayer: function(feature, latlng) {
             return L.circleMarker(latlng);
@@ -103,7 +105,16 @@ d3.json(earthquakesURL, function(earthquakeData) {
     }).addTo(earthquakes);
     earthquakes.addTo(myMap);
 
-      // Create a Legend:
+    // Retrieve platesURL with D3:
+    d3.json(platesURL, function(plateData) {
+        L.geoJson(plateData, {
+            color: "#f03b20",
+            weight: 2
+        }).addTo(tectonicPlates);
+        tectonicPlates.addTo(myMap);
+    });
+
+    // Create a Legend:
     var legend = L.control({ position: "bottomright" });
     legend.onAdd = function() {
         var div = L.DomUtil.create("div", "info legend"), 
