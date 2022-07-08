@@ -35,7 +35,7 @@ The USGS is interested in building a new set of tools that will allow them to vi
 
 ## Final Findings:
 
-Locations/countries which are high risk in earthquake with high magnitude: Japan, Chile, Alaska, Iran, Papua New Guinea, Myanmar, Indonesia, Wallis and Futuna, Vanuatu
+Locations/countries which are high risk in earthquake with high magnitude levels: Japan, Chile, Alaska, Iran, Papua New Guinea, Myanmar, Indonesia, Wallis and Futuna, Vanuatu.
 
 
 
