@@ -14,6 +14,7 @@ The USGS is interested in building a new set of tools that will allow them to vi
 ## Methods for Analysis:
 
 Utilized the datasets found in USGS and https://github.com/fraxen/tectonicplates.
+
 Libraries & data visualization utilized: Leaflet, OpenStreetMap, Mapbox
 
 
