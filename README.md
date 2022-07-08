@@ -9,7 +9,7 @@ The USGS is interested in building a new set of tools that will allow them to vi
 
 * Part 1: Create the Earthquake Visualization 
 
-* Part 2:  Illustrate the relationship between tectonic plates and seismic activity 
+* Part 2:  Ilustrate the relationship between tectonic plates and seismic activity 
 
 ## Methods for Analysis:
 
