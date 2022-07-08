@@ -26,6 +26,9 @@ Locations/countries which are high risk in earthquake with high magnitude: Japan
 ## References:
 
 http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
+
 https://github.com/fraxen/tectonicplates
+
 https://colorbrewer2.org/#type=sequential&scheme=Greens&n=3
+
 https://leafletjs.com/examples.html
